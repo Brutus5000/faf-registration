@@ -1,0 +1,25 @@
+<p-card
+  [header]="'user.registration.headers.steamLink' | translate"
+  [subheader]="'user.registration.headers.steamLink.description' | translate"
+>
+  <p-message severity="info"
+             [text]="'user.registration.forms.linkToSteam.registrationRequired' | translate"
+  ></p-message>
+
+  <form #form="ngForm" (ngSubmit)="onSubmit($event)">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+      <input pInputText type="text" name="usernameInput" [ngModel]="username"
+             [placeholder]="'user.registration.forms.username.caption' | translate">
+    </div>
+
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+      <input pInputText type="password" name="passwordInput" [ngModel]="password"
+             [placeholder]="'user.registration.forms.password.caption' | translate">
+    </div>
+
+    <button pButton type="submit" [disabled]="!form.valid"
+            [label]="'user.registration.forms.linkToSteam' | translate"></button>
+  </form>
+</p-card>

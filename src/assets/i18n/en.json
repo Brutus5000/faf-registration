@@ -1,0 +1,73 @@
+{
+  "loaded": "yes",
+  "common": {
+    "back": "Back",
+    "next": "Next"
+  },
+  "user": {
+    "registration": {
+      "headers": {
+        "registration": "Registration",
+        "registration.description": "Creating a new account on faforever.com",
+        "activation": "Activation",
+        "activation.description": "Give a password and activate your account",
+        "steamLink": "Link Account To Steam",
+        "steamLink.description": "Validate your game license by logging in to Steam",
+        "fafClientSetup": "FAF Client Setup",
+        "fafClientSetup.description": "Guide to setup the FAF Client up to your first game"
+      },
+      "forms": {
+        "username": {
+          "caption": "Username",
+          "restrictions": "Only a-z, A-Z, digits, minus and underscore are allowed. Must start with a letter. Minimum 3, maximum 16 characters",
+          "description": "This is your login name as well as the name visible to other players. It can be changed over time.",
+          "errors": {
+            "required": "Name is required",
+            "minlength": "Minimum length: 3 characters",
+            "pattern": "Name doesn't match rules",
+            "nameTaken": "Name already in use"
+          }
+        },
+        "email": {
+          "caption": "Email",
+          "description": "We will send an activation email to this address. It's also used for password reset via email.",
+          "errors": {
+            "required": "Email is required",
+            "pattern": "Not a valid email address"
+          }
+        },
+        "password": {
+          "caption": "Password",
+          "errors": {
+            "required": "Password is required",
+            "minlength": "Minimum length: 8 characters"
+          }
+        },
+        "ownsSteam.accepted": "I own Supreme Commander: Forged Alliance on Steam.",
+        "tos": "Our Terms of Service",
+        "tos.accepted": "I have read and agree with our Terms of Service",
+        "translationHint": "Only the english version is legally binding. However, the community has created <a href=\"{{translationUrl}}\">unofficial translations</a>.",
+        "privacyStatement": "Our Privacy Statement",
+        "privacyStatement.accepted": "I have read and agree with our Privacy Statement",
+        "recaptcha": "To protect ourselves from bots, we need you to solve this captcha. Sorry.",
+        "register": "Register now",
+        "activate": "Activate account",
+        "activation.emailWarning": "This step is disabled. To enable it, please click on the activation link that you received via email.",
+        "linkToSteam": "Login to Steam by clicking on the image",
+        "linkToSteam.registrationRequired": "You need an activated FAF account to perform this step."
+      },
+      "success.summary": "Account registered",
+      "success.nextSteps": "We send an email to {{email}}. Please click on the activation link in this email to proceed.",
+      "error.summary": "Account registration failed"
+    }
+  },
+  "clientSetup": {
+    "headers": {
+      "download": "Download",
+      "install": "Install",
+      "login": "Login",
+      "configure": "Configure",
+      "play": "Play a game"
+    }
+  }
+}

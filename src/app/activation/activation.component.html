@@ -1,0 +1,38 @@
+<p-card
+  [header]="'user.registration.headers.activation' | translate"
+  [subheader]="'user.registration.headers.activation.description' | translate"
+>
+  <p-message severity="warn"
+             [text]="'user.registration.forms.activation.emailWarning' | translate"
+  ></p-message>
+
+  <form #form="ngForm" (ngSubmit)="onSubmit($event)">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+      <input pInputText type="text" disabled name="usernameInput" [ngModel]="username"
+             [placeholder]="'user.registration.forms.username.caption' | translate">
+    </div>
+
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+      <input pInputText type="email" disabled name="emailInput" [ngModel]="email"
+             [placeholder]="'user.registration.forms.email.caption' | translate">
+    </div>
+
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+      <input pInputText type="password" name="passwordInput" #passwordInput="ngModel" [ngModel]="password"
+             aria-describedby="password-help" required minlength="8"
+             [placeholder]="'user.registration.forms.password.caption' | translate">
+    </div>
+    <div id="password-help">
+      <p-message *ngIf="passwordInput.errors?.required" severity="error"
+                 [text]="'user.registration.forms.password.errors.required' | translate"></p-message>
+      <p-message *ngIf="passwordInput.errors?.minlength" severity="error"
+                 [text]="'user.registration.forms.password.errors.minlength' | translate"></p-message>
+    </div>
+
+    <button pButton type="submit" [disabled]="!form.valid"
+            [label]="'user.registration.forms.activate' | translate"></button>
+  </form>
+</p-card>

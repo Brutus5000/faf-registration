@@ -1,0 +1,73 @@
+{
+  "loaded": "yes",
+  "common": {
+    "back": "Zurück",
+    "next": "Weiter"
+  },
+  "user": {
+    "registration": {
+      "headers": {
+        "registration": "Registrierung",
+        "registration.description": "Anlegen eines neuen Benutzerkontos bei faforever.com",
+        "activation": "Aktivierung",
+        "activation.description": "Vergib ein Password und aktiviere dein Konto",
+        "steamLink": "Steam Account verknüpfen",
+        "steamLink.description": "Validieren deiner Spiel-Lizenz durch Steam-Login",
+        "fafClientSetup": "FAF Client einrichten",
+        "fafClientSetup.description": "Leitfaden um den FAF Client einzurichten bis hin zum ersten Spiel"
+      },
+      "forms": {
+        "username": {
+          "caption": "Benutzername",
+          "restrictions": "Nur A-Z, a-z, Ziffern, Minus und Unterstrich sind erlaubt. Muss mit einem Buchstaben beginnen. Mindestens 3, höchstens 16 Zeichen.",
+          "description": "Dies ist deine Login-Kennung als auch dein öffentlich sichtbarer Name. Der Name kann im Laufe der Zeit geändert werden.",
+          "errors": {
+            "required": "Name ist erforderlich",
+            "minlength": "Mindestlänge sind 3 Zeichen",
+            "pattern": "Name entspricht nicht den Regeln",
+            "nameTaken": "Name bereits vergeben"
+          }
+        },
+        "email": {
+          "caption": "Email",
+          "description": "Wir senden dir eine Aktivierungs-Email an diese Adresse. Sie wird auch für das Zurücksetzen deines Passwortes benutzt.",
+          "errors": {
+            "required": "Email ist erforderlich",
+            "pattern": "Keine gültige Email-Adresse"
+          }
+        },
+        "password": {
+          "caption": "Passwort",
+          "errors": {
+            "required": "Passwort ist erforderlich",
+            "minlength": "Mindestens 8 Zeichen"
+          }
+        },
+        "ownsSteam.accepted": "Ich besitze Supreme Commander: Forged Alliance auf Steam.",
+        "tos": "Unsere Nutzungsbedingungen",
+        "tos.accepted": "Ich habe die allgemeinen Geschäftsbedingungen gelesen und akzeptiert.",
+        "translationHint": "Only the english version is legally binding. However, the community has created <a href=\"{{translationUrl}}\">unofficial translations</a>.",
+        "privacyStatement": "Unsere Datenschutzerklärung",
+        "privacyStatement.accepted": "Ich habe die Datenschutzerklärung gelesen und akzeptiert.",
+        "recaptcha": "Um uns vor Bots zu schützen, müssen wir Sie leider bitten dieses Captcha zu lösen.",
+        "register": "Jetzt registrieren",
+        "activate": "Benutzerkonto aktivieren",
+        "activation.emailWarning": "Dieser Schritt ist deaktiviert. Um ihn zu aktivieren, klicke auf den Aktivierungs-Link den du in deiner Registrierungs-Email erhalten hast.",
+        "linkToSteam": "Login bei Steam durch Klick auf das Bild",
+        "linkToSteam.registrationRequired": "Du benötigst einen aktiviertes FAF Benutzerkonto um diesen Schritt durchzuführen."
+      },
+      "success.summary": "Benutzerkonto registriert",
+      "success.nextSteps": "Wir haben dir eine Email an {{email}} geschickt. Bitte klicke auf den Aktivierungs-Link in der Email um fortzufahren.",
+      "error.summary": "Fehler bei der Registrierung"
+    }
+  },
+  "clientSetup": {
+    "headers": {
+      "download": "Download",
+      "install": "Installation",
+      "login": "Login",
+      "configure": "Konfigurieren",
+      "play": "Erstes Spiel starten"
+    }
+  }
+}

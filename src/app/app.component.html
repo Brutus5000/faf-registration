@@ -1,0 +1,10 @@
+<p-dropdown [options]="languages" [(ngModel)]="selectedLanguage" (ngModelChange)="onLangChange($event)"
+            optionLabel="name"></p-dropdown>
+
+<p-steps [model]="steps" [readonly]="false" [(activeIndex)]="activeIndex">
+</p-steps>
+
+<faf-registration *ngIf="activeStep().id == 'registration'"></faf-registration>
+<faf-activation *ngIf="activeStep().id == 'activation'"></faf-activation>
+<faf-link-to-steam *ngIf="activeStep().id == 'steamLink'"></faf-link-to-steam>
+<faf-setup-client *ngIf="activeStep().id == 'fafClientSetup'"></faf-setup-client>

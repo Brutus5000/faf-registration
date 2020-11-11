@@ -1,0 +1,84 @@
+<p-card
+  [header]="'user.registration.headers.registration' | translate"
+  [subheader]="'user.registration.headers.registration.description' | translate"
+>
+  <form #form="ngForm" (ngSubmit)="onSubmit($event)">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+      <input pInputText type="text" name="usernameInput" #usernameInput="ngModel" [(ngModel)]="username"
+             (ngModelChange)="usernameChanged.next($event)"
+             aria-describedby="username-help" required minlength="3" maxlength="16" pattern="[A-Za-z][A-Za-z0-9_-]*$"
+             [placeholder]="'user.registration.forms.username.caption' | translate">
+    </div>
+    <div id="username-help">
+      <p-message *ngIf="usernameInput.errors?.required" severity="error"
+                 [text]="'user.registration.forms.username.errors.required' | translate"></p-message>
+      <p-message *ngIf="usernameInput.errors?.minlength" severity="error"
+                 [text]="'user.registration.forms.username.errors.minlength' | translate"></p-message>
+      <p-message *ngIf="usernameInput.errors?.pattern" severity="error"
+                 [text]="'user.registration.forms.username.errors.pattern' | translate"></p-message>
+      <p-message *ngIf="usernameTaken$ | async" severity="error"
+                 [text]="'user.registration.forms.username.errors.nameTaken' | translate"></p-message>
+      <div><small [textContent]="'user.registration.forms.username.description' | translate"></small></div>
+      <div><small [textContent]="'user.registration.forms.username.restrictions' | translate"></small></div>
+    </div>
+
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+      <input pInputText type="email" name="emailInput" #emailInput="ngModel" [(ngModel)]="email"
+             aria-describedby="email-help" required pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+$"
+             [placeholder]="'user.registration.forms.email.caption' | translate">
+    </div>
+    <div id="email-help">
+      <p-message *ngIf="emailInput.errors?.required" severity="error"
+                 [text]="'user.registration.forms.email.errors.required' | translate"></p-message>
+      <p-message *ngIf="emailInput.errors?.pattern" severity="error"
+                 [text]="'user.registration.forms.email.errors.pattern' | translate"></p-message>
+      <div><small [textContent]="'user.registration.forms.email.description' | translate"></small></div>
+    </div>
+
+    <div class="p-field">
+      <p-tabView>
+        <p-tabPanel>
+          <ng-template pTemplate="header">
+            {{ 'user.registration.forms.tos' | translate }}
+          </ng-template>
+          <p-scrollPanel [style]="{width: '100%', height: '300px'}">
+            <faf-tos></faf-tos>
+          </p-scrollPanel>
+        </p-tabPanel>
+        <p-tabPanel>
+          <ng-template pTemplate="header">
+            {{ 'user.registration.forms.privacyStatement' | translate }}
+          </ng-template>
+          <p-scrollPanel [style]="{width: '100%', height: '300px'}">
+            <faf-privacy-statement></faf-privacy-statement>
+          </p-scrollPanel>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+    <div class="p-field">
+      <p-checkbox [binary]="true" name="ownsSteam" [(ngModel)]="acceptedOwnsSteam"
+                  [label]="'user.registration.forms.ownsSteam.accepted' | translate"></p-checkbox>
+    </div>
+    <div class="p-field">
+      <p-checkbox [binary]="true" name="tos" [(ngModel)]="acceptedTos"
+                  [label]="'user.registration.forms.tos.accepted' | translate"></p-checkbox>
+    </div>
+    <div class="p-field">
+      <p-checkbox [binary]="true" name="privacyStatement" [(ngModel)]="acceptedPrivacyStatement"
+                  [label]="'user.registration.forms.privacyStatement.accepted' | translate"></p-checkbox>
+    </div>
+    <div class="p-field">
+      <small [textContent]="'user.registration.forms.recaptcha' | translate"></small>
+      <p-captcha [siteKey]="recaptchaSiteKey"></p-captcha>
+    </div>
+
+    <button pButton type="submit"
+            [disabled]="!form.valid || !acceptedOwnsSteam || !acceptedPrivacyStatement || !acceptedTos
+                        || (usernameTaken$ | async)"
+            [label]="'user.registration.forms.register' | translate"></button>
+
+    <p-messages></p-messages>
+  </form>
+</p-card>

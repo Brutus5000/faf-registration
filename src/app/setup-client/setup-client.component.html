@@ -1,0 +1,12 @@
+<p-card
+  [header]="'user.registration.headers.fafClientSetup' | translate"
+  [subheader]="'user.registration.headers.fafClientSetup.description' | translate"
+>
+  <p-steps [model]="steps" [readonly]="false" [(activeIndex)]="activeIndex">
+  </p-steps>
+
+  <p-button icon="pi pi-angle-left" [label]="'common.back' | translate"
+            *ngIf="activeIndex > 0" (onClick)="activeIndex = activeIndex - 1"></p-button>
+  <p-button icon="pi pi-angle-right" iconPos="right" [label]="'common.next' | translate"
+            *ngIf="activeIndex < steps.length - 1" (onClick)="activeIndex = activeIndex + 1"></p-button>
+</p-card>
