@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import {I18nService} from './i18n.service';
 import {Subscription} from 'rxjs';
+import {Location} from '@angular/common';
 
 interface Language {
   name: string;
@@ -11,7 +12,8 @@ interface Language {
 @Component({
   selector: 'faf-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [Location]
 })
 export class AppComponent implements OnInit, OnDestroy {
   constructor(private i18nService: I18nService) {
@@ -50,30 +52,22 @@ export class AppComponent implements OnInit, OnDestroy {
       {
         id: 'registration',
         label: 'user.registration.headers.registration',
-        command: (event: any) => {
-          this.activeIndex = 0;
-        }
+        routerLink: '/registration',
       },
       {
         id: 'activation',
         label: 'user.registration.headers.activation',
-        command: (event: any) => {
-          this.activeIndex = 1;
-        }
+        routerLink: '/activation',
       },
       {
         id: 'steamLink',
         label: 'user.registration.headers.steamLink',
-        command: (event: any) => {
-          this.activeIndex = 2;
-        }
+        routerLink: 'linkToSteam',
       },
       {
         id: 'fafClientSetup',
-        label: this.i18nService.instant('user.registration.headers.fafClientSetup'),
-        command: (event: any) => {
-          this.activeIndex = 3;
-        }
+        label: 'user.registration.headers.fafClientSetup',
+        routerLink: 'setupFafClient',
       },
     ];
 

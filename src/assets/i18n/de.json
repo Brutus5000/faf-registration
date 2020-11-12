@@ -37,10 +37,12 @@
           }
         },
         "password": {
-          "caption": "Passwort",
+          "caption": "Neues Passwort",
+          "confirmCaption": "Passwort bestätigen",
           "errors": {
             "required": "Passwort ist erforderlich",
-            "minlength": "Mindestens 8 Zeichen"
+            "minlength": "Mindestens 8 Zeichen",
+            "notEqualsConfirm": "Stimmt nicht mit neuem Passwort überein"
           }
         },
         "ownsSteam.accepted": "Ich besitze Supreme Commander: Forged Alliance auf Steam.",
@@ -52,7 +54,8 @@
         "recaptcha": "Um uns vor Bots zu schützen, müssen wir Sie leider bitten dieses Captcha zu lösen.",
         "register": "Jetzt registrieren",
         "activate": "Benutzerkonto aktivieren",
-        "activation.emailWarning": "Dieser Schritt ist deaktiviert. Um ihn zu aktivieren, klicke auf den Aktivierungs-Link den du in deiner Registrierungs-Email erhalten hast.",
+        "activation.emailWarning": "Dieser Schritt ist deaktiviert (Token fehlt). Um ihn zu aktivieren, klicke auf den Aktivierungs-Link den du in deiner Registrierungs-Email erhalten hast.",
+        "activation.invalidToken": "Das Token in dieser URL ist ungültig. Bitte stelle sicher, dass dein Email Programm nicht Teile des Links abgeschnitten hat.",
         "linkToSteam": "Login bei Steam durch Klick auf das Bild",
         "linkToSteam.registrationRequired": "Du benötigst einen aktiviertes FAF Benutzerkonto um diesen Schritt durchzuführen."
       },

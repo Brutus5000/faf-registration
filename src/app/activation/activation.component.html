@@ -3,7 +3,12 @@
   [subheader]="'user.registration.headers.activation.description' | translate"
 >
   <p-message severity="warn"
+             *ngIf="!(hasToken$ | async)"
              [text]="'user.registration.forms.activation.emailWarning' | translate"
+  ></p-message>
+  <p-message severity="error"
+             *ngIf="!validToken"
+             [text]="'user.registration.forms.activation.invalidToken' | translate"
   ></p-message>
 
   <form #form="ngForm" (ngSubmit)="onSubmit($event)">
@@ -30,6 +35,16 @@
                  [text]="'user.registration.forms.password.errors.required' | translate"></p-message>
       <p-message *ngIf="passwordInput.errors?.minlength" severity="error"
                  [text]="'user.registration.forms.password.errors.minlength' | translate"></p-message>
+    </div>
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="pi pi-replay"></i></span>
+      <input pInputText type="password" name="passwordConfirmInput" #passwordConfirmInput="ngModel"
+             [ngModel]="passwordConfirm" aria-describedby="password-confirm-help"
+             [placeholder]="'user.registration.forms.password.confirmCaption' | translate">
+    </div>
+    <div id="password-confirm-help">
+      <p-message *ngIf="password === passwordConfirm" severity="error"
+                 [text]="'user.registration.forms.password.errors.notEqualsConfirm' | translate"></p-message>
     </div>
 
     <button pButton type="submit" [disabled]="!form.valid"
