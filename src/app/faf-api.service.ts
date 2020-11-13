@@ -15,12 +15,20 @@ export class FafApiService {
   constructor(private http: HttpClient) {
   }
 
-  register(username: Username, email: Email): Observable<any> {
+  registerAccount(username: Username, email: Email): Observable<any> {
     const formData = new FormData();
     formData.append('username', username);
     formData.append('email', email);
 
     return this.http.post(`${environment.fafApiUrl}/users/register`, formData);
+  }
+
+  activateAccount(activationToken: string, password: string): Observable<any> {
+    const formData = new FormData();
+    formData.append('token', activationToken);
+    formData.append('password', password);
+
+    return this.http.post(`${environment.fafApiUrl}/users/activate`, formData);
   }
 
   checkUsernameTaken(username: Username): Observable<boolean> {

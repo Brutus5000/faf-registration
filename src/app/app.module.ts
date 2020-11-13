@@ -26,6 +26,8 @@ import {LinkToSteamComponent} from './link-to-steam/link-to-steam.component';
 import {SetupClientComponent} from './setup-client/setup-client.component';
 import {TestComponent} from './test/test.component';
 import {MessagesModule} from 'primeng/messages';
+import {BlockUIModule} from 'primeng/blockui';
+import {PanelModule} from 'primeng/panel';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient): TranslateLoader {
@@ -46,6 +48,7 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateLoader {
   imports: [
     BrowserAnimationsModule,
     FormsModule,
+    BlockUIModule,
     ButtonModule,
     CardModule,
     CaptchaModule,
@@ -54,6 +57,7 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateLoader {
     InputTextModule,
     MessageModule,
     MessagesModule,
+    PanelModule,
     ScrollPanelModule,
     StepsModule,
     TabViewModule,

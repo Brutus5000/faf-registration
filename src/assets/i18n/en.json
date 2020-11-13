@@ -10,7 +10,7 @@
         "registration": "Registration",
         "registration.description": "Creating a new account on faforever.com",
         "activation": "Activation",
-        "activation.description": "Give a password and activate your account",
+        "activation.description": "Verify your data and choose a password",
         "steamLink": "Link Account To Steam",
         "steamLink.description": "Validate your game license by logging in to Steam",
         "fafClientSetup": "FAF Client Setup",
@@ -45,6 +45,19 @@
             "notEqualsConfirm": "Does not match new password"
           }
         },
+        "activation": {
+          "emailWarning": "It seems like you did not come to this page using the activation link from your registration email.<br />As we miss relevant information from the activation url token, this step is <em>disabled</em>.<br /><strong>Please use the activation link in your registration email!</strong>",
+          "invalidToken": "The token given in this URL is invalid. Please make sure your email client did not crop parts of the link.",
+          "registrationData.header": "Your registration information",
+          "password.header": "Choose your password",
+          "wrongDataHint": "If username or email is wrong just restart the registration process.",
+          "submit": "Activate account",
+          "success.summary": "Account activated",
+          "success.nextSteps": "To login to the lobby and play a game, please proceed with linking your account to Steam. However, you can already login to the website and the forum.",
+          "error.summary": "Account activation failed",
+          "back": "Back to Registration",
+          "proceed": "Proceed with Link to Steam"
+        },
         "ownsSteam.accepted": "I own Supreme Commander: Forged Alliance on Steam.",
         "tos": "Our Terms of Service",
         "tos.accepted": "I have read and agree with our Terms of Service",
@@ -53,10 +66,7 @@
         "privacyStatement.accepted": "I have read and agree with our Privacy Statement",
         "recaptcha": "To protect ourselves from bots, we need you to solve this captcha. Sorry.",
         "register": "Register now",
-        "activate": "Activate account",
-        "activation.emailWarning": "This step is disabled (token missing). To enable it, please click on the activation link that you received via email.",
-        "activation.invalidToken": "The token in this URL is invalid. Please make sure your email client did not crop parts of the link.",
-        "linkToSteam": "Login to Steam by clicking on the image",
+        "linkToSteam": "Link to Steam",
         "linkToSteam.registrationRequired": "You need an activated FAF account to perform this step."
       },
       "success.summary": "Account registered",

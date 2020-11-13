@@ -15,6 +15,7 @@ import {I18nService} from '../i18n.service';
 export class RegistrationComponent {
   recaptchaSiteKey = environment.recaptchaSiteKey;
 
+  registrationComplete = false;
   usernameChanged = new Subject<string>();
   usernameTaken$ = this.usernameChanged.asObservable()
     .pipe(debounceTime(1000))
@@ -32,20 +33,22 @@ export class RegistrationComponent {
   }
 
   onSubmit(event: any): void {
-    this.fafApiService.register(this.username, this.email)
+    this.fafApiService.registerAccount(this.username, this.email)
       .subscribe({
-          next: result => this.messageService.add({
-            severity: 'success',
-            summary: this.i18nService.instant('user.registration.success.summary'),
-            detail: this.i18nService.instant('user.registration.success.nextSteps', {email: this.email}),
-          }),
+          next: result => {
+            this.messageService.add({
+              severity: 'success',
+              summary: this.i18nService.instant('user.registration.success.summary'),
+              detail: this.i18nService.instant('user.registration.success.nextSteps', {email: this.email}),
+            });
+            this.registrationComplete = true;
+          },
           error: err => this.messageService.add({
             severity: 'error',
             summary: this.i18nService.instant('user.registration.error.summary'),
             detail: JSON.stringify(err.error),
           }),
         }
-      )
-    ;
+      );
   }
 }

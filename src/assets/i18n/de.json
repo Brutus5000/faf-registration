@@ -10,7 +10,7 @@
         "registration": "Registrierung",
         "registration.description": "Anlegen eines neuen Benutzerkontos bei faforever.com",
         "activation": "Aktivierung",
-        "activation.description": "Vergib ein Password und aktiviere dein Konto",
+        "activation.description": "Verifiziere deine Angaben und wähle ein Passwort",
         "steamLink": "Steam Account verknüpfen",
         "steamLink.description": "Validieren deiner Spiel-Lizenz durch Steam-Login",
         "fafClientSetup": "FAF Client einrichten",
@@ -45,6 +45,14 @@
             "notEqualsConfirm": "Stimmt nicht mit neuem Passwort überein"
           }
         },
+        "activation": {
+          "emailWarning": "Anscheinend bist du nicht über den Aktivierungs-Link deiner Registrierung-Email hierher gelangt.<br />Da uns relevante informationen aus dem Aktivierungs-Link-Token fehlen ist dieser Schritt <em>deaktiviert</em>.<br /><strong>Bitte nutze den Aktivierung-Link aus der Registrierungs-Email!</strong>",
+          "invalidToken": "Das Token in dieser URL ist ungültig. Bitte stelle sicher, dass dein Email Programm nicht Teile des Links abgeschnitten hat.",
+          "registrationData.header": "Deine Registrierungs-Daten",
+          "password.header": "Wähle dein Passwort",
+          "wrongDataHint": "Falls Benutzername oder Email falsch sind, starte die Registrierung neu.",
+          "submit": "Benutzerkonto aktivieren"
+        },
         "ownsSteam.accepted": "Ich besitze Supreme Commander: Forged Alliance auf Steam.",
         "tos": "Unsere Nutzungsbedingungen",
         "tos.accepted": "Ich habe die allgemeinen Geschäftsbedingungen gelesen und akzeptiert.",
@@ -53,9 +61,6 @@
         "privacyStatement.accepted": "Ich habe die Datenschutzerklärung gelesen und akzeptiert.",
         "recaptcha": "Um uns vor Bots zu schützen, müssen wir Sie leider bitten dieses Captcha zu lösen.",
         "register": "Jetzt registrieren",
-        "activate": "Benutzerkonto aktivieren",
-        "activation.emailWarning": "Dieser Schritt ist deaktiviert (Token fehlt). Um ihn zu aktivieren, klicke auf den Aktivierungs-Link den du in deiner Registrierungs-Email erhalten hast.",
-        "activation.invalidToken": "Das Token in dieser URL ist ungültig. Bitte stelle sicher, dass dein Email Programm nicht Teile des Links abgeschnitten hat.",
         "linkToSteam": "Login bei Steam durch Klick auf das Bild",
         "linkToSteam.registrationRequired": "Du benötigst einen aktiviertes FAF Benutzerkonto um diesen Schritt durchzuführen."
       },
