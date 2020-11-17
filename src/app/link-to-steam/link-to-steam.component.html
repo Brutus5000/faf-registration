@@ -1,25 +1,43 @@
 <p-card
   [header]="'user.registration.headers.steamLink' | translate"
-  [subheader]="'user.registration.headers.steamLink.description' | translate"
->
+  [subheader]="'user.registration.headers.steamLink.description' | translate">
+
+  <ng-template [ngIf]="result==='success'">
+    <p-messages severity="success">
+      <ng-template pTemplate>
+        <span class="p-message-icon pi pi-check"></span>
+        <span class="p-message-summary" translate="user.registration.forms.steamLink.success.summary"></span>
+        <span class="p-message-detail" translate="user.registration.forms.steamLink.success.nextSteps"></span>
+      </ng-template>
+    </p-messages>
+
+    <button pButton type="button" routerLink="/setupFafClient" icon="pi pi-angle-right" iconPos="right"
+            [label]="'user.registration.forms.steamLink.proceed' | translate">
+    </button>
+    <p></p>
+  </ng-template>
+
   <p-message severity="info"
-             [text]="'user.registration.forms.linkToSteam.registrationRequired' | translate"
+             [text]="'user.registration.forms.steamLink.registrationRequired' | translate"
   ></p-message>
 
   <form #form="ngForm" (ngSubmit)="onSubmit($event)">
     <div class="p-inputgroup">
       <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
       <input pInputText type="text" required name="usernameInput" [(ngModel)]="username"
+             [disabled]="result === 'success'"
              [placeholder]="'user.registration.forms.username.caption' | translate">
     </div>
 
     <div class="p-inputgroup">
       <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
       <input pInputText type="password" required name="passwordInput" [(ngModel)]="password"
+             [disabled]="result === 'success'"
              [placeholder]="'user.registration.forms.password.caption' | translate">
     </div>
 
-    <button pButton type="submit" [disabled]="!form.valid" [label]="'user.registration.forms.linkToSteam' | translate">
+    <button pButton type="submit" [disabled]="!form.valid"
+            [label]="'user.registration.forms.steamLink.submit' | translate">
       <img src="https://www.faforever.com/images/steam_link.png" style="margin-right: 0.5em;">
     </button>
   </form>

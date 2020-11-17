@@ -5,8 +5,45 @@
   <p-steps [model]="steps" [readonly]="false" [(activeIndex)]="activeIndex">
   </p-steps>
 
-  <p-button icon="pi pi-angle-left" [label]="'common.back' | translate"
-            *ngIf="activeIndex > 0" (onClick)="activeIndex = activeIndex - 1"></p-button>
-  <p-button icon="pi pi-angle-right" iconPos="right" [label]="'common.next' | translate"
-            *ngIf="activeIndex < steps.length - 1" (onClick)="activeIndex = activeIndex + 1"></p-button>
+  <ng-template [ngIf]="activeIndex === 0">
+    <div *ngIf="latestRelease$ | async; let release; else githubUnavailable">
+      <p>
+        <a [href]="release.windowsDownloadUrl">
+          <p-button
+            [label]="'user.registration.forms.fafClientSetup.download.windows' | translate:{'version': release.name}"
+            icon="pi pi-download" class="p-button-lg"></p-button>
+        </a>
+      </p>
+
+      <p>
+        <a [href]="release.linuxDownloadUrl">
+          <p-button
+            [label]="'user.registration.forms.fafClientSetup.download.linux' | translate:{'version': release.name}"
+            icon="pi pi-download"></p-button>
+        </a>
+      </p>
+
+      <p translate="user.registration.forms.fafClientSetup.notSupported"></p>
+    </div>
+    <ng-template #githubUnavailable>
+      <p-message severity="error"
+                 [text]="'user.registration.forms.fafClientSetup.download.unavailable' | translate"></p-message>
+    </ng-template>
+  </ng-template>
+
+  <ng-template [ngIf]="activeIndex === 1">
+    <p-message severity="info"
+               [text]="'user.registration.forms.fafClientSetup.install.faPresent' | translate"></p-message>
+    <div>
+      On Windows
+      On Linux
+    </div>
+  </ng-template>
+
+  <div>
+    <p-button icon="pi pi-angle-left" [label]="'common.back' | translate"
+              *ngIf="activeIndex > 0" (onClick)="activeIndex = activeIndex - 1"></p-button>
+    <p-button icon="pi pi-angle-right" iconPos="right" [label]="'common.next' | translate"
+              *ngIf="activeIndex < steps.length - 1" (onClick)="activeIndex = activeIndex + 1"></p-button>
+  </div>
 </p-card>

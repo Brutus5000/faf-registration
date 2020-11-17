@@ -10,7 +10,12 @@ const routes: Routes = [
   {path: 'registration', component: RegistrationComponent},
   {path: 'activation', component: ActivationComponent},
   {path: 'linkToSteam', component: LinkToSteamComponent},
-  {path: 'setupFafClient', component: SetupClientComponent},
+  {
+    path: 'setupFafClient', component: SetupClientComponent,
+    children: [{
+      path: '**', component: SetupClientComponent
+    }]
+  },
 ];
 
 @NgModule({

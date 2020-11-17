@@ -24,8 +24,9 @@
       <input pInputText type="email" disabled name="emailInput" [(ngModel)]="email"
              [placeholder]="'user.registration.forms.email.caption' | translate">
     </div>
-    <div
-      [innerHTML]="'user.registration.forms.activation.wrongDataHint' | translate:{'routerLink': '/registration' }"></div>
+    <div><small
+      [innerHTML]="'user.registration.forms.activation.wrongDataHint' | translate:{'routerLink': '/registration' }"></small>
+    </div>
 
     <h4 translate>user.registration.forms.activation.password.header</h4>
     <div class="p-inputgroup">

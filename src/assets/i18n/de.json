@@ -11,7 +11,7 @@
         "registration.description": "Anlegen eines neuen Benutzerkontos bei faforever.com",
         "activation": "Aktivierung",
         "activation.description": "Verifiziere deine Angaben und wähle ein Passwort",
-        "steamLink": "Steam Account verknüpfen",
+        "steamLink": "Steam Konto verknüpfen",
         "steamLink.description": "Validieren deiner Spiel-Lizenz durch Steam-Login",
         "fafClientSetup": "FAF Client einrichten",
         "fafClientSetup.description": "Leitfaden um den FAF Client einzurichten bis hin zum ersten Spiel"
@@ -51,7 +51,18 @@
           "registrationData.header": "Deine Registrierungs-Daten",
           "password.header": "Wähle dein Passwort",
           "wrongDataHint": "Falls Benutzername oder Email falsch sind, starte die Registrierung neu.",
-          "submit": "Benutzerkonto aktivieren"
+          "submit": "Benutzerkonto aktivieren",
+          "success.summary": "Aktivierung erfolreich",
+          "success.nextSteps": "Um dich in der Lobby einzuloggen und ein Spiel zu spielen, bitte fahre fort mit dem Verknüpfen des Kontos mit Steam. Allerdings hast du bereits Zugang zur Webseite und zum Forum.",
+          "error.summary": "Aktivierung fehlgeschlagen",
+          "back": "Zurück zur Registration",
+          "proceed": "Weiter zum Steam Konto verknüpfen."
+        },
+        "steamLink": {
+          "registrationRequired": "Du benötigst einen aktiviertes FAF Benutzerkonto um diesen Schritt durchzuführen.",
+          "submit": "Verknüpfe Steam Konto",
+          "success.summary": "Steam Verknüpfung erfolgreich",
+          "success.nextSteps": "Du kannst dich jetzt auf dem Lobby Server einloggen. Die nächsten Schritte beschrieben wie du den FAF Client einrichtest."
         },
         "ownsSteam.accepted": "Ich besitze Supreme Commander: Forged Alliance auf Steam.",
         "tos": "Unsere Nutzungsbedingungen",
@@ -60,9 +71,7 @@
         "privacyStatement": "Unsere Datenschutzerklärung",
         "privacyStatement.accepted": "Ich habe die Datenschutzerklärung gelesen und akzeptiert.",
         "recaptcha": "Um uns vor Bots zu schützen, müssen wir Sie leider bitten dieses Captcha zu lösen.",
-        "register": "Jetzt registrieren",
-        "linkToSteam": "Login bei Steam durch Klick auf das Bild",
-        "linkToSteam.registrationRequired": "Du benötigst einen aktiviertes FAF Benutzerkonto um diesen Schritt durchzuführen."
+        "register": "Jetzt registrieren"
       },
       "success.summary": "Benutzerkonto registriert",
       "success.nextSteps": "Wir haben dir eine Email an {{email}} geschickt. Bitte klicke auf den Aktivierungs-Link in der Email um fortzufahren.",

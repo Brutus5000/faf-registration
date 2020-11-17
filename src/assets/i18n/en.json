@@ -58,6 +58,20 @@
           "back": "Back to Registration",
           "proceed": "Proceed with Link to Steam"
         },
+        "steamLink": {
+          "registrationRequired": "You need an activated FAF account to perform this step.",
+          "submit": "Link to Steam",
+          "success.summary": "Account link successful",
+          "success.nextSteps": "You can now login to the lobby server. The next step explains how to setup the FAF client.",
+          "proceed": "Proceed with FAF Client Setup"
+        },
+        "fafClientSetup": {
+          "download.windows": "Download installer for Windows [64 bit]",
+          "download.linux": "Download version for Linux",
+          "download.unavailable": "Github seems to be unavailable at the moment. Please refresh or try again later.",
+          "notSupported": "Windows [32 bit] and MacOS are not supported.",
+          "install.faPresent": "We assume that you have installed Forged Alliance on Steam already!"
+        },
         "ownsSteam.accepted": "I own Supreme Commander: Forged Alliance on Steam.",
         "tos": "Our Terms of Service",
         "tos.accepted": "I have read and agree with our Terms of Service",
@@ -65,9 +79,7 @@
         "privacyStatement": "Our Privacy Statement",
         "privacyStatement.accepted": "I have read and agree with our Privacy Statement",
         "recaptcha": "To protect ourselves from bots, we need you to solve this captcha. Sorry.",
-        "register": "Register now",
-        "linkToSteam": "Link to Steam",
-        "linkToSteam.registrationRequired": "You need an activated FAF account to perform this step."
+        "register": "Register now"
       },
       "success.summary": "Account registered",
       "success.nextSteps": "We send an email to {{email}}. Please click on the activation link in this email to proceed.",
