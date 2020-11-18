@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build and deploy to Github Pages
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.2.0
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.1
         with:
           github_access_token: ${{ secrets.ACCESS_TOKEN }} # see the Configuration section for how you can create secrets
           base_href: /faf-registration/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
