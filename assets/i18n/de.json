@@ -1,0 +1,101 @@
+{
+  "loaded": "yes",
+  "common": {
+    "back": "Zurück",
+    "next": "Weiter",
+    "windows": "Windows",
+    "linux": "Linux"
+  },
+  "user": {
+    "registration": {
+      "headers": {
+        "registration": "Registrierung",
+        "registration.description": "Anlegen eines neuen Benutzerkontos bei faforever.com",
+        "activation": "Aktivierung",
+        "activation.description": "Verifiziere deine Angaben und wähle ein Passwort",
+        "steamLink": "Steam Konto verknüpfen",
+        "steamLink.description": "Validieren deiner Spiel-Lizenz durch Steam-Login",
+        "fafClientSetup": "FAF Client einrichten",
+        "fafClientSetup.description": "Leitfaden um den FAF Client einzurichten bis hin zum ersten Spiel"
+      },
+      "forms": {
+        "username": {
+          "caption": "Benutzername",
+          "restrictions": "Nur A-Z, a-z, Ziffern, Minus und Unterstrich sind erlaubt. Muss mit einem Buchstaben beginnen. Mindestens 3, höchstens 16 Zeichen.",
+          "description": "Dies ist deine Login-Kennung als auch dein öffentlich sichtbarer Name. Der Name kann im Laufe der Zeit geändert werden.",
+          "errors": {
+            "required": "Name ist erforderlich",
+            "minlength": "Mindestlänge sind 3 Zeichen",
+            "pattern": "Name entspricht nicht den Regeln",
+            "nameTaken": "Name bereits vergeben"
+          }
+        },
+        "email": {
+          "caption": "Email",
+          "description": "Wir senden dir eine Aktivierungs-Email an diese Adresse. Sie wird auch für das Zurücksetzen deines Passwortes benutzt.",
+          "errors": {
+            "required": "Email ist erforderlich",
+            "pattern": "Keine gültige Email-Adresse"
+          }
+        },
+        "password": {
+          "caption": "Neues Passwort",
+          "confirmCaption": "Passwort bestätigen",
+          "errors": {
+            "required": "Passwort ist erforderlich",
+            "minlength": "Mindestens 8 Zeichen",
+            "notEqualsConfirm": "Stimmt nicht mit neuem Passwort überein"
+          }
+        },
+        "activation": {
+          "emailWarning": "Anscheinend bist du nicht über den Aktivierungs-Link deiner Registrierung-Email hierher gelangt.<br />Da uns relevante informationen aus dem Aktivierungs-Link-Token fehlen ist dieser Schritt <em>deaktiviert</em>.<br /><strong>Bitte nutze den Aktivierung-Link aus der Registrierungs-Email!</strong>",
+          "invalidToken": "Das Token in dieser URL ist ungültig. Bitte stelle sicher, dass dein Email Programm nicht Teile des Links abgeschnitten hat.",
+          "registrationData.header": "Deine Registrierungs-Daten",
+          "password.header": "Wähle dein Passwort",
+          "wrongDataHint": "Falls Benutzername oder Email falsch sind, starte die Registrierung neu.",
+          "submit": "Benutzerkonto aktivieren",
+          "success.summary": "Aktivierung erfolreich",
+          "success.nextSteps": "Um dich in der Lobby einzuloggen und ein Spiel zu spielen, bitte fahre fort mit dem Verknüpfen des Kontos mit Steam. Allerdings hast du bereits Zugang zur Webseite und zum Forum.",
+          "error.summary": "Aktivierung fehlgeschlagen",
+          "back": "Zurück zur Registration",
+          "proceed": "Weiter zum Steam Konto verknüpfen."
+        },
+        "steamLink": {
+          "registrationRequired": "Du benötigst einen aktiviertes FAF Benutzerkonto um diesen Schritt durchzuführen.",
+          "submit": "Verknüpfe Steam Konto",
+          "success.summary": "Steam Verknüpfung erfolgreich",
+          "success.nextSteps": "Du kannst dich jetzt auf dem Lobby Server einloggen. Die nächsten Schritte beschrieben wie du den FAF Client einrichtest."
+        },
+        "fafClientSetup": {
+          "download.currentVersion": "Die aktuellste stabile Version ist {{version}}.",
+          "download.windows": "Installationsprogramm für Windows [64 bit] herunterladen",
+          "download.linux": "Version für Linux herunterladen",
+          "download.unavailable": "Github scheint aktuell nicht erreichbar zu sein. Bitte lade die Seite erneut oder versuche es später noch einmal.",
+          "notSupported": "Windows [32 bit] als auch MacOS werden nicht unterstützt.",
+          "install.faPresent": "Diese Anleitung setzt voraus, dass Forged Alliance schon über Steam installiert ist!",
+          "install.linuxWiki": "Öffne den Wiki Artikel"
+        },
+        "ownsSteam.accepted": "Ich besitze Supreme Commander: Forged Alliance auf Steam.",
+        "tos": "Unsere Nutzungsbedingungen",
+        "tos.accepted": "Ich habe die allgemeinen Geschäftsbedingungen gelesen und akzeptiert.",
+        "translationHint": "Only the english version is legally binding. However, the community has created <a href=\"{{translationUrl}}\">unofficial translations</a>.",
+        "privacyStatement": "Unsere Datenschutzerklärung",
+        "privacyStatement.accepted": "Ich habe die Datenschutzerklärung gelesen und akzeptiert.",
+        "recaptcha": "Um uns vor Bots zu schützen, müssen wir Sie leider bitten dieses Captcha zu lösen.",
+        "register": "Jetzt registrieren"
+      },
+      "success.summary": "Benutzerkonto registriert",
+      "success.nextSteps": "Wir haben dir eine Email an {{email}} geschickt. Bitte klicke auf den Aktivierungs-Link in der Email um fortzufahren.",
+      "error.summary": "Fehler bei der Registrierung"
+    }
+  },
+  "clientSetup": {
+    "headers": {
+      "download": "Download",
+      "install": "Installation",
+      "login": "Login",
+      "configure": "Konfigurieren",
+      "play": "Erstes Spiel starten"
+    }
+  }
+}
