@@ -1,0 +1,31 @@
+<div *ngIf="latestRelease$ | async; let release; else githubUnavailable">
+  <p translate="user.registration.forms.fafClientSetup.download.currentVersion"
+     [translateParams]="{'version': release.name}"></p>
+  <p>
+    <a [href]="release.windowsDownloadUrl">
+      <p-button
+        icon="pi pi-download"
+        [label]="'user.registration.forms.fafClientSetup.download.windows' | translate:{'version': release.name}"
+        (click)="selectOperatingSystem('windows')"></p-button>
+    </a>
+  </p>
+  <p>
+    <a [href]="release.linuxDownloadUrl">
+      <p-button
+        icon="pi pi-download"
+        [label]="'user.registration.forms.fafClientSetup.download.linux' | translate:{'version': release.name}"
+        (click)="selectOperatingSystem('linux')"></p-button>
+    </a>
+  </p>
+
+  <p translate="user.registration.forms.fafClientSetup.notSupported"></p>
+</div>
+<ng-template #githubUnavailable>
+  <p-message severity="error"
+             [text]="'user.registration.forms.fafClientSetup.download.unavailable' | translate"></p-message>
+</ng-template>
+
+<div>
+  <p-button icon="pi pi-angle-right" iconPos="right" [label]="'common.next' | translate"
+            routerLink="../install"></p-button>
+</div>

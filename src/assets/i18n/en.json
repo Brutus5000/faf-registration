@@ -2,7 +2,9 @@
   "loaded": "yes",
   "common": {
     "back": "Back",
-    "next": "Next"
+    "next": "Next",
+    "windows": "Windows",
+    "linux": "Linux"
   },
   "user": {
     "registration": {
@@ -66,11 +68,13 @@
           "proceed": "Proceed with FAF Client Setup"
         },
         "fafClientSetup": {
+          "download.currentVersion": "The current stable version is {{version}}.",
           "download.windows": "Download installer for Windows [64 bit]",
           "download.linux": "Download version for Linux",
           "download.unavailable": "Github seems to be unavailable at the moment. Please refresh or try again later.",
           "notSupported": "Windows [32 bit] and MacOS are not supported.",
-          "install.faPresent": "We assume that you have installed Forged Alliance on Steam already!"
+          "install.faPresent": "This guide assumes that you have installed Forged Alliance on Steam already!",
+          "install.linuxWiki": "Open the Wiki article"
         },
         "ownsSteam.accepted": "I own Supreme Commander: Forged Alliance on Steam.",
         "tos": "Our Terms of Service",

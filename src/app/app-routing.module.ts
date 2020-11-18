@@ -11,10 +11,10 @@ const routes: Routes = [
   {path: 'activation', component: ActivationComponent},
   {path: 'linkToSteam', component: LinkToSteamComponent},
   {
-    path: 'setupFafClient', component: SetupClientComponent,
-    children: [{
-      path: '**', component: SetupClientComponent
-    }]
+    path: 'setupFafClient',
+    children: [
+      {path: '', redirectTo: 'download', pathMatch: 'full'},
+      {path: '**', component: SetupClientComponent}]
   },
 ];
 

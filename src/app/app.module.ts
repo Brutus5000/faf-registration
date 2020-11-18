@@ -28,6 +28,11 @@ import {TestComponent} from './test/test.component';
 import {MessagesModule} from 'primeng/messages';
 import {BlockUIModule} from 'primeng/blockui';
 import {PanelModule} from 'primeng/panel';
+import {DownloadComponent} from './setup-client/download/download.component';
+import {InstallComponent} from './setup-client/install/install.component';
+import {LoginComponent} from './setup-client/login/login.component';
+import {ConfigureComponent} from './setup-client/configure/configure.component';
+import {PlayComponent} from './setup-client/play/play.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient): TranslateLoader {
@@ -43,7 +48,12 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateLoader {
     ActivationComponent,
     LinkToSteamComponent,
     SetupClientComponent,
-    TestComponent
+    TestComponent,
+    DownloadComponent,
+    InstallComponent,
+    LoginComponent,
+    ConfigureComponent,
+    PlayComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -2,7 +2,9 @@
   "loaded": "yes",
   "common": {
     "back": "Zurück",
-    "next": "Weiter"
+    "next": "Weiter",
+    "windows": "Windows",
+    "linux": "Linux"
   },
   "user": {
     "registration": {
@@ -63,6 +65,15 @@
           "submit": "Verknüpfe Steam Konto",
           "success.summary": "Steam Verknüpfung erfolgreich",
           "success.nextSteps": "Du kannst dich jetzt auf dem Lobby Server einloggen. Die nächsten Schritte beschrieben wie du den FAF Client einrichtest."
+        },
+        "fafClientSetup": {
+          "download.currentVersion": "Die aktuellste stabile Version ist {{version}}.",
+          "download.windows": "Installationsprogramm für Windows [64 bit] herunterladen",
+          "download.linux": "Version für Linux herunterladen",
+          "download.unavailable": "Github scheint aktuell nicht erreichbar zu sein. Bitte lade die Seite erneut oder versuche es später noch einmal.",
+          "notSupported": "Windows [32 bit] als auch MacOS werden nicht unterstützt.",
+          "install.faPresent": "Diese Anleitung setzt voraus, dass Forged Alliance schon über Steam installiert ist!",
+          "install.linuxWiki": "Öffne den Wiki Artikel"
         },
         "ownsSteam.accepted": "Ich besitze Supreme Commander: Forged Alliance auf Steam.",
         "tos": "Unsere Nutzungsbedingungen",

@@ -1,0 +1,43 @@
+<p-tabView>
+  <p-tabPanel header="Microsoft Windows">
+    <p>On double-clicking the installer you will encounter a warning from Windows, because our installer is not signed.
+      Signing requires a costly certificate, therefore we don't do it.</p>
+
+  </p-tabPanel>
+  <p-tabPanel header="Linux" [selected]="operatingSystem == 'linux'">
+    <ol>
+      <li>Extract the .tar.gz file somewhere into your home directory.</li>
+      <li>Install a Java JRE or JDK in version 14 (we recommend AdoptOpenJDK).</li>
+      <li>
+        Setup Proton in Steam to run Forged Alliance
+        <ol>
+          <li>In the preferences enable Steam -> Settings -> Steam Play -> under Advanced -> "Enable Steam Play for all
+            other titles"
+          </li>
+          <li>Set the launch options to: PROTON_NO_ESYNC=1 PROTON_DUMP_DEBUG_COMMANDS=1 %command%</li>
+          <li>The best known working Proton version as of now is 5.0-9</li>
+          <li>Run the game at least once. This will create a launcher shell script in /tmp/proton_your_linux_username
+          </li>
+          <li>If you ran the game from Steam you should have a file called "run" in /tmp/proton_your_linux_username.
+          </li>
+          <li>The tmp directory is only temporary so copy this file to somewhere nice. You will need it in the configure
+            step.
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <p>The full and updated guide is in the wiki. We recommend the installation using native Steam.</p>
+    <a href="https://wiki.faforever.com/index.php?title=Setting_Up_FAF_Linux#Install_using_native_Steam">
+      <p-button
+        icon="pi pi-wiki"
+        [label]="'user.registration.forms.fafClientSetup.install.linuxWiki' | translate"></p-button>
+    </a>
+  </p-tabPanel>
+</p-tabView>
+
+<div>
+  <p-button icon="pi pi-angle-left" [label]="'common.back' | translate"
+            routerLink="../download"></p-button>
+  <p-button icon="pi pi-angle-right" iconPos="right" [label]="'common.next' | translate"
+            routerLink="../login"></p-button>
+</div>
