@@ -36,7 +36,7 @@ import {PlayComponent} from './setup-client/play/play.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient): TranslateLoader {
-  return new TranslateHttpLoader(httpClient);
+  return new TranslateHttpLoader(httpClient, './assets/i18n/');
 }
 
 @NgModule({
