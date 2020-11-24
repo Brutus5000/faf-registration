@@ -4,7 +4,13 @@
     "back": "Back",
     "next": "Next",
     "windows": "Windows",
-    "linux": "Linux"
+    "linux": "Linux",
+    "serviceUnavailable": "Could not connect to {{url}}."
+  },
+  "fafApi": {
+    "error": {
+      "usernameTaken": "The username is already taken."
+    }
   },
   "user": {
     "registration": {
