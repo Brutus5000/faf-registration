@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Subject} from 'rxjs';
 import {debounceTime, switchMap} from 'rxjs/operators';
-import {FafApiService} from '../faf-api.service';
+import {ApiError, FafApiService} from '../faf-api.service';
 import {environment} from '../../environments/environment';
 import {MessageService} from 'primeng/api';
 import {I18nService} from '../i18n.service';
@@ -43,11 +43,14 @@ export class RegistrationComponent {
             });
             this.registrationComplete = true;
           },
-          error: err => this.messageService.add({
-            severity: 'error',
-            summary: this.i18nService.instant('user.registration.error.summary'),
-            detail: JSON.stringify(err.error),
-          }),
+          error: (err: ApiError[]) => {
+            console.log(err);
+            err.forEach(e => this.messageService.add({
+              severity: 'error',
+              summary: this.i18nService.instant('user.registration.error.summary'),
+              detail: this.i18nService.instant(e.translationKey, e.translationArgs),
+            }));
+          }
         }
       );
   }
