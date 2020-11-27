@@ -7,6 +7,10 @@
              [text]="'user.registration.forms.activation.emailWarning' | translate"
   ></p-message>
   <p-message severity="error"
+             *ngIf="tokenExpired"
+             [text]="'user.registration.forms.activation.expiredToken' | translate"
+  ></p-message>
+  <p-message severity="error"
              *ngIf="!validToken"
              [text]="'user.registration.forms.activation.invalidToken' | translate"
   ></p-message>
@@ -55,7 +59,7 @@
 
     <p-button type="button" icon="pi pi-angle-left" [disabled]="activationComplete"
               routerLink="/registration" [label]="'user.registration.forms.activation.back' | translate"></p-button>
-    <p-button type="submit" [disabled]="!form.valid || password !== passwordConfirm || activationComplete"
+    <p-button type="submit" [disabled]="false"
               [label]="'user.registration.forms.activation.submit' | translate"></p-button>
     <p-button type="button" routerLink="/linkToSteam" icon="pi pi-angle-right" iconPos="right"
               [disabled]="!activationComplete"

@@ -14,7 +14,7 @@
       "usernameTaken": "The username {{username}} is already taken.",
       "emailRegistered": "There is already an account registered for {{email}}.",
       "emailBlacklisted": "We do not accept your email provider due to spam issues. Please choose a different one such as Gmail.",
-      "tokenInvalid": "Your token is invalid. This may happen if your email app cut off the link too early. Please make sure to click on the full link.",
+      "tokenInvalid": "The token given in this URL is invalid. Please make sure your email client did not crop parts of the link.",
       "tokenExpired": "Your token expired. Please restart the registration and click on the activation link right away.",
       "usernameReserved": "The username {{username}} is currently reserved for its previous owner. The reservation expires in {{months}} months."
     }
@@ -62,6 +62,7 @@
         },
         "activation": {
           "emailWarning": "It seems like you did not come to this page using the activation link from your registration email.<br />As we miss relevant information from the activation url token, this step is <em>disabled</em>.<br /><strong>Please use the activation link in your registration email!</strong>",
+          "expiredToken": "Your token expired. Please restart the registration and click on the activation link right away.",
           "invalidToken": "The token given in this URL is invalid. Please make sure your email client did not crop parts of the link.",
           "registrationData.header": "Your registration information",
           "password.header": "Choose your password",

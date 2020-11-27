@@ -44,7 +44,6 @@ export class RegistrationComponent {
             this.registrationComplete = true;
           },
           error: (err: ApiError[]) => {
-            console.log(err);
             err.forEach(e => this.messageService.add({
               severity: 'error',
               summary: this.i18nService.instant('user.registration.error.summary'),

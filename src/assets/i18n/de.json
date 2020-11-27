@@ -61,6 +61,7 @@
         },
         "activation": {
           "emailWarning": "Anscheinend bist du nicht über den Aktivierungs-Link deiner Registrierung-Email hierher gelangt.<br />Da uns relevante informationen aus dem Aktivierungs-Link-Token fehlen ist dieser Schritt <em>deaktiviert</em>.<br /><strong>Bitte nutze den Aktivierung-Link aus der Registrierungs-Email!</strong>",
+          "expiredToken": "Dein Token ist abgelaufen. Bitte starte die Registrierung erneut und folge dem Aktivierungslink zeitnah.",
           "invalidToken": "Das Token in dieser URL ist ungültig. Bitte stelle sicher, dass dein Email Programm nicht Teile des Links abgeschnitten hat.",
           "registrationData.header": "Deine Registrierungs-Daten",
           "password.header": "Wähle dein Passwort",

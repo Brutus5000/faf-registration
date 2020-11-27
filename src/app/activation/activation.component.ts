@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
 import jwtDecode from 'jwt-decode';
-import {FafApiService} from '../faf-api.service';
+import {ApiError, FafApiService} from '../faf-api.service';
 import {MessageService} from 'primeng/api';
 import {I18nService} from '../i18n.service';
 
@@ -10,6 +10,7 @@ interface RegistrationToken {
   action: string;
   username: string;
   email: string;
+  lifetime: Date;
 }
 
 @Component({
@@ -25,6 +26,7 @@ export class ActivationComponent implements OnInit {
   password: string;
   passwordConfirm: string;
   token: string;
+  tokenExpired: boolean;
   validToken = true;
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -40,12 +42,13 @@ export class ActivationComponent implements OnInit {
           const token = jwtDecode(encodedToken) as RegistrationToken;
           this.username = token.username;
           this.email = token.email;
+          this.tokenExpired = new Date(token.lifetime) < new Date();
           this.validToken = true;
         } catch (err) {
-          this.token = undefined;
           this.username = undefined;
           this.email = undefined;
           this.validToken = false;
+          this.tokenExpired = undefined;
         }
       });
   }
@@ -64,11 +67,13 @@ export class ActivationComponent implements OnInit {
             });
             this.activationComplete = true;
           },
-          error: err => this.messageService.add({
-            severity: 'error',
-            summary: this.i18nService.instant('user.registration.forms.activation.error.summary'),
-            detail: JSON.stringify(err.error),
-          }),
+          error: (err: ApiError[]) => {
+            err.forEach(e => this.messageService.add({
+              severity: 'error',
+              summary: this.i18nService.instant('user.registration.forms.activation.error.summary'),
+              detail: this.i18nService.instant(e.translationKey, e.translationArgs),
+            }));
+          },
         }
       );
   }
