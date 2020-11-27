@@ -27,23 +27,49 @@ type ApiErrorResponse = {
   errors: ApiErrorItem[];
 };
 
+type TranslationMapper = {
+  key: string;
+  argsMapper?: (args: string[]) => any;
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class FafApiService {
 
-  private readonly apiErrorMapping: Map<string, string>;
+  private readonly apiErrorMapping: Map<string, TranslationMapper>;
 
   constructor(private http: HttpClient) {
-    this.apiErrorMapping = new Map<string, string>();
-    this.apiErrorMapping.set('130', 'emailInvalid');
-    this.apiErrorMapping.set('131', 'usernameInvalid');
-    this.apiErrorMapping.set('132', 'usernameTaken');
-    this.apiErrorMapping.set('133', 'emailRegistered');
-    this.apiErrorMapping.set('134', 'emailBlacklisted');
-    this.apiErrorMapping.set('135', 'tokenInvalid');
-    this.apiErrorMapping.set('136', 'tokenExpired');
+    this.apiErrorMapping = new Map<string, TranslationMapper>();
+    this.apiErrorMapping.set('130', {
+      key: 'emailInvalid', argsMapper: args => {
+        return {email: args[0]};
+      }
+    });
+    this.apiErrorMapping.set('131', {
+      key: 'usernameInvalid', argsMapper: args => {
+        return {username: args[0]};
+      }
+    });
+    this.apiErrorMapping.set('132', {
+      key: 'usernameTaken', argsMapper: args => {
+        return {username: args[0]};
+      }
+    });
+    this.apiErrorMapping.set('133', {
+      key: 'emailRegistered', argsMapper: args => {
+        return {email: args[0]};
+      }
+    });
+    this.apiErrorMapping.set('134', {key: 'emailBlacklisted'});
+    this.apiErrorMapping.set('135', {key: 'tokenInvalid'});
+    this.apiErrorMapping.set('136', {key: 'tokenExpired'});
+    this.apiErrorMapping.set('162', {
+      key: 'usernameReserved',
+      argsMapper: args => {
+        return {username: args[0], months: args[1]};
+      }
+    });
   }
 
   registerAccount(username: Username, email: Email): Observable<any> {
@@ -80,11 +106,18 @@ export class FafApiService {
       });
     } else if (err.status >= 400) {
       const error = err.error as ApiErrorResponse;
-      error.errors.forEach(item =>
-        errors.push({
-          translationKey: 'fafApi.error.' + this.apiErrorMapping.get(item.code),
-          translationArgs: item.meta.args,
-        })
+      error.errors.forEach(item => {
+          const translationMapping = this.apiErrorMapping.get(item.code);
+          let args = {};
+          if (translationMapping.argsMapper) {
+            args = translationMapping.argsMapper(item.meta.args);
+          }
+
+          errors.push({
+            translationKey: 'fafApi.error.' + translationMapping.key,
+            translationArgs: args,
+          });
+        }
       );
     } else {
       // This shouldn't happen.

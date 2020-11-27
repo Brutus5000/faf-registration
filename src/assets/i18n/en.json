@@ -9,7 +9,14 @@
   },
   "fafApi": {
     "error": {
-      "usernameTaken": "The username is already taken."
+      "emailInvalid": "The email address {{email}} is invalid.",
+      "usernameInvalid": "The username {{username}} is invalid. Please read the hints regarding allowed characters.",
+      "usernameTaken": "The username {{username}} is already taken.",
+      "emailRegistered": "There is already an account registered for {{email}}.",
+      "emailBlacklisted": "We do not accept your email provider due to spam issues. Please choose a different one such as Gmail.",
+      "tokenInvalid": "Your token is invalid. This may happen if your email app cut off the link too early. Please make sure to click on the full link.",
+      "tokenExpired": "Your token expired. Please restart the registration and click on the activation link right away.",
+      "usernameReserved": "The username {{username}} is currently reserved for its previous owner. The reservation expires in {{months}} months."
     }
   },
   "user": {
