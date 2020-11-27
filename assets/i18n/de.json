@@ -6,6 +6,18 @@
     "windows": "Windows",
     "linux": "Linux"
   },
+  "fafApi": {
+    "error": {
+      "emailInvalid": "Die Email-Adresse {{email}} ist ungültig.",
+      "usenameInvalid": "Der Benutzername {{username}} ist ungültig. Bitte befolge die Hinweise.",
+      "usernameTaken": "Der Benutzername {{username}} ist bereits vergeben.",
+      "emailRegistered": "Unter deiner Email-Adresse {{email}} wurde bereits ein Account angelegt.",
+      "emailBlacklisted": "Dein Email-Dienst wird von uns abgelehnt aufgrund von Problemen mit Spam. Bitte benutze einen anderen Dienst wie z.B. Gmail.",
+      "tokenInvalid": "Dein Token ist ungültig. Das kann passieren, wenn deine Email Anwendung den Aktivierungslink zu früh abschneidet. Bitte stelle sicher dem ganzen Link zu folgen.",
+      "tokenExpired": "Dein Token ist abgelaufen. Bitte starte die Registrierung erneut und folge dem Aktivierungslink zeitnah.",
+      "usernameReserved": "Der Benutzername {{username}} ist aktuell noch reserviert für seinen vorherigen Besitzer. Die Reservierung läuft in {{months}} Monaten aus."
+    }
+  },
   "user": {
     "registration": {
       "headers": {
