@@ -21,6 +21,8 @@
   "user": {
     "registration": {
       "headers": {
+        "precheck": "Vorprüfung",
+        "precheck.description": "Einige wichtige Fragen vorab",
         "registration": "Registrierung",
         "registration.description": "Anlegen eines neuen Benutzerkontos bei faforever.com",
         "activation": "Aktivierung",
@@ -48,7 +50,11 @@
           "errors": {
             "required": "Email ist erforderlich",
             "pattern": "Keine gültige Email-Adresse"
-          }
+          },
+          "emailSent.header": "Sie haben Post",
+          "emailSent.details": "Wir haben dir eine Email geschickt. Bitte schau in dein Postfach und folge dem Aktivierungs-Link",
+          "emailSent.notReceived": "Email nach 5 Minuten noch nicht da?",
+          "emailSent.resend": "Aktivierungs-Email erneut versenden"
         },
         "password": {
           "caption": "Neues Passwort",

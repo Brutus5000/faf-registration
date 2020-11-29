@@ -33,6 +33,10 @@ import {InstallComponent} from './setup-client/install/install.component';
 import {LoginComponent} from './setup-client/login/login.component';
 import {ConfigureComponent} from './setup-client/configure/configure.component';
 import {PlayComponent} from './setup-client/play/play.component';
+import {DialogModule} from 'primeng/dialog';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
+import {PrecheckComponent} from './precheck/precheck.component';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient): TranslateLoader {
@@ -53,7 +57,8 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateLoader {
     InstallComponent,
     LoginComponent,
     ConfigureComponent,
-    PlayComponent
+    PlayComponent,
+    PrecheckComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -63,11 +68,14 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateLoader {
     CardModule,
     CaptchaModule,
     CheckboxModule,
+    DialogModule,
     DropdownModule,
     InputTextModule,
     MessageModule,
     MessagesModule,
+    OverlayPanelModule,
     PanelModule,
+    RadioButtonModule,
     ScrollPanelModule,
     StepsModule,
     TabViewModule,

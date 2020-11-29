@@ -21,6 +21,7 @@
              [text]="'user.registration.forms.steamLink.registrationRequired' | translate"
   ></p-message>
 
+  <h3 translate="user.registration.forms.steamLink.enterFafCredentials"></h3>
   <form #form="ngForm" (ngSubmit)="onSubmit($event)">
     <div class="p-inputgroup">
       <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
@@ -36,6 +37,7 @@
              [placeholder]="'user.registration.forms.password.caption' | translate">
     </div>
 
+    <p translate="user.registration.forms.steamLink.redirectHint"></p>
     <button pButton type="submit" [disabled]="!form.valid"
             [label]="'user.registration.forms.steamLink.submit' | translate">
       <img src="https://www.faforever.com/images/steam_link.png" style="margin-right: 0.5em;">

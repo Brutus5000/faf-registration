@@ -26,6 +26,7 @@ export class RegistrationComponent {
   acceptedOwnsSteam: boolean;
   acceptedTos: boolean;
   acceptedPrivacyStatement: boolean;
+  confirmationDialogVisible = false;
 
   constructor(private i18nService: I18nService,
               private fafApiService: FafApiService,
@@ -42,6 +43,7 @@ export class RegistrationComponent {
               detail: this.i18nService.instant('user.registration.success.nextSteps', {email: this.email}),
             });
             this.registrationComplete = true;
+            this.confirmationDialogVisible = true;
           },
           error: (err: ApiError[]) => {
             err.forEach(e => this.messageService.add({

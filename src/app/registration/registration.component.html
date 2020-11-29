@@ -37,26 +37,13 @@
       <div><small [textContent]="'user.registration.forms.email.description' | translate"></small></div>
     </div>
 
-    <div class="p-field p-shadow-1">
-      <p-tabView>
-        <p-tabPanel>
-          <ng-template pTemplate="header">
-            {{ 'user.registration.forms.tos' | translate }}
-          </ng-template>
-          <p-scrollPanel [style]="{width: '100%', height: '300px'}">
-            <faf-tos></faf-tos>
-          </p-scrollPanel>
-        </p-tabPanel>
-        <p-tabPanel>
-          <ng-template pTemplate="header">
-            {{ 'user.registration.forms.privacyStatement' | translate }}
-          </ng-template>
-          <p-scrollPanel [style]="{width: '100%', height: '300px'}">
-            <faf-privacy-statement></faf-privacy-statement>
-          </p-scrollPanel>
-        </p-tabPanel>
-      </p-tabView>
-    </div>
+    <p id="documents">
+      <button type="button" pButton [label]="'user.registration.forms.tos' | translate" (click)="tos.toggle($event)"
+              icon="pi pi-paperclip"></button>
+      <button type="button" pButton [label]="'user.registration.forms.privacyStatement' | translate"
+              (click)="privacyStatement.toggle($event)" icon="pi pi-paperclip"></button>
+    </p>
+
     <div class="p-field">
       <p-checkbox [binary]="true" name="ownsSteam" [(ngModel)]="acceptedOwnsSteam"
                   [label]="'user.registration.forms.ownsSteam.accepted' | translate"></p-checkbox>
@@ -78,6 +65,32 @@
             [disabled]="!form.valid || !acceptedOwnsSteam || !acceptedPrivacyStatement || !acceptedTos
                         || (usernameTaken$ | async) || registrationComplete"
             [label]="'user.registration.forms.register' | translate"></button>
+
+
+    <p-overlayPanel #tos [dismissable]="true" [showCloseIcon]="true">
+      <ng-template pTemplate>
+        <p-scrollPanel [style]="{width: '600px', height: '300px'}">
+          <faf-tos></faf-tos>
+        </p-scrollPanel>
+      </ng-template>
+    </p-overlayPanel>
+
+    <p-overlayPanel #privacyStatement [dismissable]="true" [showCloseIcon]="true">
+      <ng-template pTemplate>
+        <p-scrollPanel [style]="{width: '600px', height: '300px'}">
+          <faf-privacy-statement></faf-privacy-statement>
+        </p-scrollPanel>
+      </ng-template>
+    </p-overlayPanel>
+
+    <p-dialog [header]="'user.registration.forms.email.emailSent.header' | translate" modal="true"
+              [(visible)]="confirmationDialogVisible" [style]="{width: '300px'}">
+      <div><i class="pi pi-envelope" style="font-size: 10rem;"></i></div>
+      <p translate="user.registration.forms.email.emailSent.details"></p>
+      <p>{{"user.registration.forms.email.emailSent.notReceived" | translate}}
+        <a href="" translate="user.registration.forms.email.emailSent.resend" (click)="form.onSubmit($event)"></a>
+      </p>
+    </p-dialog>
 
     <p-messages></p-messages>
   </form>

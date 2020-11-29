@@ -50,6 +50,11 @@ export class AppComponent implements OnInit, OnDestroy {
   private buildMenuTranslations(): void {
     this.steps = [
       {
+        id: 'precheck',
+        label: 'user.registration.headers.precheck',
+        routerLink: '/precheck',
+      },
+      {
         id: 'registration',
         label: 'user.registration.headers.registration',
         routerLink: '/registration',
