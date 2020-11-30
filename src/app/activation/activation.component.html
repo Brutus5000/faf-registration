@@ -16,23 +16,14 @@
   ></p-message>
 
   <form #form="ngForm" (ngSubmit)="onSubmit($event)">
-    <h4 translate>user.registration.forms.activation.registrationData.header</h4>
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-      <input pInputText type="text" disabled name="usernameInput" [(ngModel)]="username"
-             [placeholder]="'user.registration.forms.username.caption' | translate">
-    </div>
+    <h4 translate
+        [translateParams]="{'username': username || ('user.registration.forms.activation.unknownUser' | translate)}">
+      user.registration.forms.activation.hello</h4>
+    <p><small>
+      {{'user.registration.forms.activation.wrongDataHint' | translate}}
+      <a routerLink="../registration" translate="user.registration.forms.activation.backToRegistration"></a>
+    </small></p>
 
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
-      <input pInputText type="email" disabled name="emailInput" [(ngModel)]="email"
-             [placeholder]="'user.registration.forms.email.caption' | translate">
-    </div>
-    <div><small
-      [innerHTML]="'user.registration.forms.activation.wrongDataHint' | translate:{'routerLink': '/registration' }"></small>
-    </div>
-
-    <h4 translate>user.registration.forms.activation.password.header</h4>
     <div class="p-inputgroup">
       <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
       <input pInputText type="password" name="passwordInput" #passwordInput="ngModel" [(ngModel)]="password"
@@ -57,13 +48,13 @@
                  [text]="'user.registration.forms.password.errors.notEqualsConfirm' | translate"></p-message>
     </div>
 
-    <p-button type="button" icon="pi pi-angle-left" [disabled]="activationComplete"
-              routerLink="/registration" [label]="'user.registration.forms.activation.back' | translate"></p-button>
-    <p-button type="submit" [disabled]="false"
-              [label]="'user.registration.forms.activation.submit' | translate"></p-button>
-    <p-button type="button" routerLink="/linkToSteam" icon="pi pi-angle-right" iconPos="right"
-              [disabled]="!activationComplete"
-              [label]="'user.registration.forms.activation.proceed' | translate"></p-button>
+    <p>
+      <p-button type="submit" [disabled]="false"
+                [label]="'user.registration.forms.activation.submit' | translate"></p-button>
+      <p-button type="button" routerLink="/linkToSteam" icon="pi pi-angle-right" iconPos="right"
+                [disabled]="!activationComplete"
+                [label]="'user.registration.forms.activation.proceed' | translate"></p-button>
+    </p>
 
     <p-messages></p-messages>
   </form>
