@@ -1,0 +1,76 @@
+<p-card
+  [header]="'user.registration.headers.precheck' | translate"
+  [subheader]="'user.registration.headers.precheck.description' | translate"
+>
+  <h2 translate="user.registration.forms.precheck.whereBought"></h2>
+  <div class="p-field-radiobutton">
+    <p-radioButton name="gameSource" value="notOwned" id="notOwned" [(ngModel)]="gameSource"></p-radioButton>
+    <label for="notOwned" translate="user.registration.forms.precheck.whereBought.notOwned"></label>
+  </div>
+  <div class="p-field-radiobutton">
+    <p-radioButton name="gameSource" value="steam" id="steam" [(ngModel)]="gameSource"></p-radioButton>
+    <label for="steam" translate="user.registration.forms.precheck.whereBought.steam"></label>
+  </div>
+  <div class="p-field-radiobutton">
+    <p-radioButton name="gameSource" value="gog" id="gog" [(ngModel)]="gameSource"></p-radioButton>
+    <label for="gog" translate="user.registration.forms.precheck.whereBought.gog"></label>
+  </div>
+  <div class="p-field-radiobutton">
+    <p-radioButton name="gameSource" value="retail" id="retail" [(ngModel)]="gameSource"></p-radioButton>
+    <label for="retail" translate="user.registration.forms.precheck.whereBought.retail"></label>
+  </div>
+
+  <h2 translate="user.registration.forms.precheck.operatingSystem"></h2>
+  <div class="p-field-radiobutton">
+    <p-radioButton name="operatingSystem" value="W10x64" id="W10x64" [(ngModel)]="operatingSystem"></p-radioButton>
+    <label for="W10x64" translate="user.registration.forms.precheck.operatingSystem.W10x64"></label>
+  </div>
+  <div class="p-field-radiobutton">
+    <p-radioButton name="operatingSystem" value="W10x86" id="W10x86" [(ngModel)]="operatingSystem"></p-radioButton>
+    <label for="W10x86" translate="user.registration.forms.precheck.operatingSystem.W10x86"></label>
+  </div>
+  <div class="p-field-radiobutton">
+    <p-radioButton name="operatingSystem" value="W8x64" id="W8x64" [(ngModel)]="operatingSystem"></p-radioButton>
+    <label for="W8x64" translate="user.registration.forms.precheck.operatingSystem.W8x64"></label>
+  </div>
+  <div class="p-field-radiobutton">
+    <p-radioButton name="operatingSystem" value="W8x86" id="W8x86" [(ngModel)]="operatingSystem"></p-radioButton>
+    <label for="W8x86" translate="user.registration.forms.precheck.operatingSystem.W8x86"></label>
+  </div>
+  <div class="p-field-radiobutton">
+    <p-radioButton name="operatingSystem" value="W7x64" id="W7x64" [(ngModel)]="operatingSystem"></p-radioButton>
+    <label for="W7x64" translate="user.registration.forms.precheck.operatingSystem.W7x64"></label>
+  </div>
+  <div class="p-field-radiobutton">
+    <p-radioButton name="operatingSystem" value="W7x86" id="W7x86" [(ngModel)]="operatingSystem"></p-radioButton>
+    <label for="W7x86" translate="user.registration.forms.precheck.operatingSystem.W7x86"></label>
+  </div>
+  <div class="p-field-radiobutton">
+    <p-radioButton name="operatingSystem" value="WXP" id="WXP" [(ngModel)]="operatingSystem"></p-radioButton>
+    <label for="WXP" translate="user.registration.forms.precheck.operatingSystem.WXP"></label>
+  </div>
+  <div class="p-field-radiobutton">
+    <p-radioButton name="operatingSystem" value="MacOS" id="MacOS" [(ngModel)]="operatingSystem"></p-radioButton>
+    <label for="MacOS" translate="user.registration.forms.precheck.operatingSystem.macOs"></label>
+  </div>
+  <div class="p-field-radiobutton">
+    <p-radioButton name="operatingSystem" value="Linux" id="Linux" [(ngModel)]="operatingSystem"></p-radioButton>
+    <label for="Linux" translate="user.registration.forms.precheck.operatingSystem.linux"></label>
+  </div>
+
+  <p-button [label]="'user.registration.forms.precheck.check' | translate"
+            [disabled]="!gameSource || !operatingSystem" (click)="validate()"></p-button>
+
+
+  <p-dialog [header]="'user.registration.forms.precheck.checkDone' | translate" modal="true"
+            [(visible)]="resultVisible" [style]="{width: '600px'}">
+    <p-messages [closable]="false"></p-messages>
+    <p>
+      <p-checkbox *ngIf="!(validGame && validOperatingSystem)" [(ngModel)]="overrideCheck"
+                  [binary]="true" [label]="'user.registration.forms.precheck.ignoreResults' | translate">>
+      </p-checkbox>
+    </p>
+    <p-button routerLink="../registration" [label]="'user.registration.forms.precheck.proceed' | translate"
+              [disabled]="!(overrideCheck || (validGame && validOperatingSystem))"></p-button>
+  </p-dialog>
+</p-card>

@@ -65,6 +65,33 @@
             "notEqualsConfirm": "Stimmt nicht mit neuem Passwort überein"
           }
         },
+        "precheck": {
+          "whereBought": "Wo hast du Supreme Commander: Forged Alliance erworben?",
+          "whereBought.notOwned": "I habe es nie gekauft",
+          "whereBought.steam": "Digital auf Steam",
+          "whereBought.steam.owned": "Du besitzt FA on Steam! Wir müssen das in einem späteren Schritt noch validieren.",
+          "whereBought.steam.required": "Entschuldige. Du kannst nur auf FAF spielen, wenn du Forged Alliance auf Steam besitzt.",
+          "whereBought.gog": "Digital auf Gog.com",
+          "whereBought.retail": "Im Einzelhandel oder im Internet mit echter CD",
+          "whereBought.retail.steamRedeem": "Einzelhands CD-Keys können bei Steam aktiviert werden zu einer SC:FA Gold Edition.",
+          "operatingSystem": "Welches Betriebsystem hast du im Einsatz?",
+          "operatingSystem.W10x64": "Windows 10 (64 bit)",
+          "operatingSystem.W10x86": "Windows 10 (32 bit)",
+          "operatingSystem.W8x64": "Windows 8 (64 bit)",
+          "operatingSystem.W8x86": "Windows 8 (32 bit)",
+          "operatingSystem.W7x64": "Windows 7 (64 bit)",
+          "operatingSystem.W7x86": "Windows 7 (32 bit)",
+          "operatingSystem.WXP": "Windows XP oder älter",
+          "operatingSystem.macOs": "MacOS (beliebige Version)",
+          "operatingSystem.linux": "Linux (beliebige Version)",
+          "operatingSystem.supported": "FAF wird auf deinem Betriebssystem unterstützt.",
+          "operatingSystem.windowsOutdated": "Deine Windows Version wird von Microsoft nicht mehr unterstützt. Bitte ziehe in Betracht auf Windows 10 (64 bit) oder Linux zu wechseln.",
+          "operatingSystem.unsupported": "FAF unterstützt dein Betriebsystem nicht. Bitte ziehe in Betracht auf Windows 10 (64 bit) oder Linux zu wechseln.",
+          "check": "Voraussetzungen prüfen",
+          "checkDone": "Wir haben deine Angaben geprüft",
+          "ignoreResults": "Verstanden. Ich werde die Probleme später lösen und will mich trotzdem registrieren.",
+          "proceed": "Fortfahren mit Registrierung"
+        },
         "activation": {
           "emailWarning": "Anscheinend bist du nicht über den Aktivierungs-Link deiner Registrierung-Email hierher gelangt.<br />Da uns relevante informationen aus dem Aktivierungs-Link-Token fehlen ist dieser Schritt <em>deaktiviert</em>.<br /><strong>Bitte nutze den Aktivierung-Link aus der Registrierungs-Email!</strong>",
           "expiredToken": "Dein Token ist abgelaufen. Bitte starte die Registrierung erneut und folge dem Aktivierungslink zeitnah.",
