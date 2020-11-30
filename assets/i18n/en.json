@@ -22,6 +22,8 @@
   "user": {
     "registration": {
       "headers": {
+        "precheck": "Pre-Check",
+        "precheck.description": "A few important questions first",
         "registration": "Registration",
         "registration.description": "Creating a new account on faforever.com",
         "activation": "Activation",
@@ -49,7 +51,11 @@
           "errors": {
             "required": "Email is required",
             "pattern": "Not a valid email address"
-          }
+          },
+          "emailSent.header": "You've got mail",
+          "emailSent.details": "We sent you an email. Please check your inbox and open the activation link in the mail.",
+          "emailSent.notReceived": "Didn't receive mail within 5 minutes?",
+          "emailSent.resend": "Resend activation email"
         },
         "password": {
           "caption": "Enter new Password",
@@ -59,6 +65,33 @@
             "minlength": "Minimum length: 8 characters",
             "notEqualsConfirm": "Does not match new password"
           }
+        },
+        "precheck": {
+          "whereBought": "Where did you buy Supreme Commander: Forged Alliance?",
+          "whereBought.notOwned": "I didn't buy it",
+          "whereBought.steam": "Digital on Steam",
+          "whereBought.steam.owned": "You own FA on Steam! We need to validate your Steam game ownership in a later step.",
+          "whereBought.steam.required": "Sorry. You can only play on FAF if you own Forged Alliance on Steam.",
+          "whereBought.gog": "Digital on Gog.com",
+          "whereBought.retail": "In a retail shop / internet with a physical disc",
+          "whereBought.retail.steamRedeem": "Retail CD keys can be redeemed on Steam for a SC:FA Gold edition.",
+          "operatingSystem": "Which operating system do you use?",
+          "operatingSystem.W10x64": "Windows 10 (64 bit)",
+          "operatingSystem.W10x86": "Windows 10 (32 bit)",
+          "operatingSystem.W8x64": "Windows 8 (64 bit)",
+          "operatingSystem.W8x86": "Windows 8 (32 bit)",
+          "operatingSystem.W7x64": "Windows 7 (64 bit)",
+          "operatingSystem.W7x86": "Windows 7 (32 bit)",
+          "operatingSystem.WXP": "Windows XP or older",
+          "operatingSystem.macOs": "MacOS (any version)",
+          "operatingSystem.linux": "Linux (any version)",
+          "operatingSystem.supported": "FAF will work on your operating system.",
+          "operatingSystem.windowsOutdated": "Your Windows version is not supported by Microsoft anymore. Consider upgrading to Windows 10 (64 bit) or moving to Linux.",
+          "operatingSystem.unsupported": "FAF does not support your operating system. Consider upgrading to Windows 10 (64 bit) or moving to Linux.",
+          "check": "Check prerequisites",
+          "checkDone": "We checked your information",
+          "ignoreResults": "Understood. I will fix these issues later and want to register anyway.",
+          "proceed": "Proceed with registration"
         },
         "activation": {
           "emailWarning": "It seems like you did not come to this page using the activation link from your registration email.<br />As we miss relevant information from the activation url token, this step is <em>disabled</em>.<br /><strong>Please use the activation link in your registration email!</strong>",
@@ -75,7 +108,9 @@
           "proceed": "Proceed with Link to Steam"
         },
         "steamLink": {
+          "enterFafCredentials": "Please enter your FAF credentials",
           "registrationRequired": "You need an activated FAF account to perform this step.",
+          "redirectHint": "During the process we will redirect you to Steam, where you need to login with your Steam credentials. FAF has no access to your Steam credentials at any time.",
           "submit": "Link to Steam",
           "success.summary": "Account link successful",
           "success.nextSteps": "You can now login to the lobby server. The next step explains how to setup the FAF client.",
