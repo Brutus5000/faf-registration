@@ -45,10 +45,6 @@
     </p>
 
     <div class="p-field">
-      <p-checkbox [binary]="true" name="ownsSteam" [(ngModel)]="acceptedOwnsSteam"
-                  [label]="'user.registration.forms.ownsSteam.accepted' | translate"></p-checkbox>
-    </div>
-    <div class="p-field">
       <p-checkbox [binary]="true" name="tos" [(ngModel)]="acceptedTos"
                   [label]="'user.registration.forms.tos.accepted' | translate"></p-checkbox>
     </div>
@@ -62,7 +58,7 @@
     </div>
 
     <button pButton type="submit"
-            [disabled]="!form.valid || !acceptedOwnsSteam || !acceptedPrivacyStatement || !acceptedTos
+            [disabled]="!form.valid || !acceptedPrivacyStatement || !acceptedTos
                         || (usernameTaken$ | async) || registrationComplete"
             [label]="'user.registration.forms.register' | translate"></button>
 

@@ -127,12 +127,11 @@
           "install.faPresent": "This guide assumes that you have installed Forged Alliance on Steam already!",
           "install.linuxWiki": "Open the Wiki article"
         },
-        "ownsSteam.accepted": "I own Supreme Commander: Forged Alliance on Steam.",
         "tos": "Our Terms of Service",
-        "tos.accepted": "I have read and agree with our Terms of Service",
+        "tos.accepted": "I have read and agree with the Terms of Service",
         "translationHint": "Only the english version is legally binding. However, the community has created <a href=\"{{translationUrl}}\">unofficial translations</a>.",
         "privacyStatement": "Our Privacy Statement",
-        "privacyStatement.accepted": "I have read and agree with our Privacy Statement",
+        "privacyStatement.accepted": "I have read and agree with the Privacy Statement",
         "recaptcha": "To protect ourselves from bots, we need you to solve this captcha. Sorry.",
         "register": "Register now"
       },

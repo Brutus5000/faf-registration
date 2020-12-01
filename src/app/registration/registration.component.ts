@@ -23,7 +23,6 @@ export class RegistrationComponent {
 
   username: string;
   email: string;
-  acceptedOwnsSteam: boolean;
   acceptedTos: boolean;
   acceptedPrivacyStatement: boolean;
   confirmationDialogVisible = false;

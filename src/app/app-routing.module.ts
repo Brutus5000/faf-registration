@@ -7,7 +7,7 @@ import {SetupClientComponent} from './setup-client/setup-client.component';
 import {PrecheckComponent} from './precheck/precheck.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'registration', pathMatch: 'full'},
+  {path: '', redirectTo: 'precheck', pathMatch: 'full'},
   {path: 'precheck', component: PrecheckComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'activation', component: ActivationComponent},
