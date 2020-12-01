@@ -123,7 +123,6 @@
           "install.faPresent": "Diese Anleitung setzt voraus, dass Forged Alliance schon über Steam installiert ist!",
           "install.linuxWiki": "Öffne den Wiki Artikel"
         },
-        "ownsSteam.accepted": "Ich besitze Supreme Commander: Forged Alliance auf Steam.",
         "tos": "Unsere Nutzungsbedingungen",
         "tos.accepted": "Ich habe die allgemeinen Geschäftsbedingungen gelesen und akzeptiert.",
         "translationHint": "Nur die englische Fassung ist rechtlich bindend. Es stehen allerdings <a href=\"{{translationUrl}}\">inoffizielle Übersetzungen</a> aus der Community bereit.",
