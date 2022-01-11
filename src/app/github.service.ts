@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {from, Observable} from 'rxjs';
 import {filter, map, max, mergeMap} from 'rxjs/operators';
-import {fromArray} from 'rxjs/internal/observable/fromArray';
 import {compare} from 'semver';
 
 const githubApiProjectUrl = 'https://api.github.com/repos/FAForever/downlords-faf-client';
@@ -38,7 +37,7 @@ export class GithubService {
   getLatestReleases(): Observable<GithubRelease> {
     return this.httpClient
       .get<GithubReleaseDto[]>(`${githubApiProjectUrl}/releases`, {headers: {Accept: 'application/vnd.github.v3+json'}})
-      .pipe(mergeMap(data => fromArray(data)))
+      .pipe(mergeMap(data => from(data)))
       .pipe(filter(release => !release.prerelease))
       .pipe(max<GithubReleaseDto>((x, y) => compare(x.tag_name, y.tag_name)))
       .pipe(map(release => {
